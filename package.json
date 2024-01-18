@@ -1,0 +1,18 @@
+{
+  "name": "tpd",
+  "version": "1.0.0",
+  "description": "Thirty Seconds Picture Diary",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "koa": "^2.15.0",
+    "koa-send": "^5.0.1",
+    "koa-static": "^5.0.0"
+  }
+}
