@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
 import { listEntries, deleteEntry } from '~/composables/api';
+import '~/assets/styles/common.css';
+import '~/assets/styles/index.css';
 
 
 const items = ref<any[]>([]);
@@ -15,37 +17,37 @@ onMounted(load);
 <template>
 <div class="container">
 <header class="head">
-<h1>10초 그림일기</h1>
-<NuxtLink to="/write" class="btn">일기 쓰기</NuxtLink>
+  <div class="logo">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M3 17V7c0-2.2 1.8-4 4-4h10c2.2 0 4 1.8 4 4v10c0 2.2-1.8 4-4 4H7c-2.2 0-4-1.8-4-4z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path d="M8 7h8M8 12h8M8 17h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <h1>10초 그림일기</h1>
 </header>
 
-
 <section class="grid">
-<article v-for="e in items" :key="e.id" class="card">
-<img :src="e.image_url" alt="drawing" />
-<div class="body">
-<h3>{{ e.title }}</h3>
-<p>{{ e.content }}</p>
-<div class="actions">
-<button class="btn danger" @click="removeItem(e.id)">삭제</button>
-</div>
-<small class="small">{{ new Date(e.created_at).toLocaleString() }}</small>
-</div>
-</article>
+  <NuxtLink to="/write" class="card add-card">
+    <div class="add-content">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 5v14m-7-7h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span>새 일기 쓰기</span>
+    </div>
+  </NuxtLink>
+  <article v-for="e in items" :key="e.id" class="card">
+    <img :src="e.image_url" alt="drawing" />
+    <div class="body">
+      <h3>{{ e.title }}</h3>
+      <p>{{ e.content }}</p>
+      <div class="actions">
+        <button class="btn danger" @click="removeItem(e.id)">삭제</button>
+      </div>
+      <small class="small">{{ new Date(e.created_at).toLocaleString() }}</small>
+    </div>
+  </article>
 </section>
 </div>
 </template>
 
 
-<style scoped>
-.container{ max-width: 920px; margin: 0 auto; padding: 20px; font-family: system-ui, -apple-system, Segoe UI, Roboto, Noto Sans KR, sans-serif; }
-.head{ display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; }
-.btn{ padding:8px 12px; border:1px solid #ddd; border-radius:10px; background:#fafafa; cursor:pointer; text-decoration:none; color:inherit; }
-.grid{ display:grid; grid-template-columns: repeat(auto-fill, minmax(240px,1fr)); gap:16px; }
-.card{ border:1px solid #e5e5e5; border-radius:14px; overflow:hidden; background:#fff; }
-.card img{ width:100%; display:block; aspect-ratio:4/3; object-fit:cover; }
-.body{ padding:12px; }
-.actions{ margin-top:8px; }
-.small{ color:#666; font-size:14px; }
-.danger{ border-color:#ff6b6b; color:#ff3b30; }
-</style>

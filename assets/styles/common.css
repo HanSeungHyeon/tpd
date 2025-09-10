@@ -1,0 +1,101 @@
+/* 공통 스타일 */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Noto Sans KR, sans-serif;
+}
+
+/* 공통 컨테이너 */
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 32px 20px;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Noto Sans KR, sans-serif;
+}
+
+/* 공통 헤더 */
+.head {
+  display: flex;
+  align-items: center;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+}
+
+.head h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+/* 공통 버튼 */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* 공통 입력 필드 */
+.input, .textarea {
+  width: 100%;
+  padding: 16px;
+  border: 2px solid;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.6;
+}
+
+/* 공통 폼 그룹 */
+.form-group {
+  margin-bottom: 32px;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.label-text {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.label-required {
+  font-weight: 700;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+  
+  .head h1 {
+    font-size: 2rem;
+  }
+  
+  .input, .textarea {
+    padding: 14px;
+  }
+}

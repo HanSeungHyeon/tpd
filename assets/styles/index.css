@@ -1,0 +1,130 @@
+/* 메인 페이지 전용 스타일 */
+.container {
+  background: linear-gradient(135deg, #4263eb 0%, #3b82f6 100%);
+  min-height: 100vh;
+  color: white;
+}
+
+.head {
+  justify-content: center;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  gap: 16px;
+}
+
+.logo {
+  color: white;
+}
+
+.head h1 {
+  color: white;
+}
+
+/* 버튼 스타일 */
+.btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.btn.danger {
+  background: rgba(255, 71, 87, 0.2);
+  color: #ff4757;
+  border-color: rgba(255, 71, 87, 0.3);
+}
+
+.btn.danger:hover {
+  background: rgba(255, 71, 87, 0.3);
+}
+
+/* 그리드 레이아웃 */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+/* 카드 스타일 */
+.card {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.add-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  border: 2px dashed rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.add-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-style: solid;
+}
+
+.add-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: white;
+}
+
+.add-content span {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.card img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.body {
+  padding: 20px;
+}
+
+.body h3 {
+  margin: 0 0 12px 0;
+  font-size: 1.25rem;
+  color: white;
+  font-weight: 600;
+}
+
+.body p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+}
+
+.actions {
+  margin-top: 16px;
+  margin-bottom: 12px;
+}
+
+.small {
+  display: block;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.875rem;
+  margin-top: 8px;
+}
